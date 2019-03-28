@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+#for i in 172.16.5.32 172.16.5.30 172.16.5.29 172.16.5.34 172.16.5.35 172.16.5.36 172.16.5.37 172.16.5.38
+
+for i in `cat /home/rayan_ray/openmpi-2.0.1/examples/subhrodip/my_host`
+ 
+do
+	if [ "$i" != "172.16.5.33" ]
+	then
+		if [ ${i:0:1} != "#" ]
+		then
+    			scp $1 $i:$OPENMPI/examples/subhrodip/
+		fi
+	fi
+done
+
